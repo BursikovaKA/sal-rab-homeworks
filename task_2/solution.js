@@ -16,12 +16,10 @@ function calcShipping(sum, min, shipping) {
     // если productsSum больше 0 и меньше freeShippingMinSum,
     // то shippingSum присвоить значение shippingPrice
 let shippingSum;
-if(productsSum = 0){
-console.log(shippingSum = 0);
-}else if (productsSum >= freeShippingMinSum){
-    console.log(shippingSum = 0);
-}else if (freeShippingMinSum < productsSum > 0){
-console.log(shippingSum = shippingPrice); 
+if(productsSum === 0 || productsSum >= freeShippingMinSum){
+shippingSum = 0;
+}else {
+shippingSum = shippingPrice; 
 }
 
     // Конец решения задания №2.1.
@@ -37,15 +35,15 @@ function calcDiscount(sum, min, discount) {
     // Задание №2.2. Рассчитать скидку
 
     // создайте переменную discountPrice
-
+    let discountPrice;
     // если productsSum больше или равно discountMinSum,
     // то присвойте discountSum значение discountPart процентов от productsSum,
     // иначе присвойте discountSum значение 0
-let discountPrice;
+    let discountSum;
 if(productsSum>=discountMinSum){
-    console.log(discountSum=discountPart*productsSum)
+    discountSum = discountPart*productsSum/100
 }
-else {console.log(discountSum=0)
+else {discountSum = 0
 }
 
     // Конец решения задания №2.2.
@@ -60,24 +58,20 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     // Задача №2.3. Рассчитать скидки и доставку в корзине
 
     // создайте переменную totalSum
-
+    let totalSum;
     // присвойте totalSum значение productsSum
     // уменьшите totalSum на discountSum
-
+    totalSum = productsSum;
+    totalSum = totalSum - discountSum;
     let shippingSum = calcShipping(totalSum, shippingFreeMinSum, shippingPrice); // не изменяйте эту строку!!!
 
     // прибавьте к totalSum значение shippingSum
-
+    totalSum = totalSum + shippingSum;
     // создайте переменную freeShipping
     // запишите без использования if или любых других условий:
     // если shippingSum равно нулю, то freeShipping должна быть равна true, иначе freeShipping должна быть равна false
-let totalSum;
-totalSum = productsSum;
-totalSum = totalSum - discountSum;
-totalSum = totalSum + shippingSum;
-let freeShipping;
-shippingSum = 0;
-console.log(shippingSum>0 && shippingSum<0 ? "freeShipping=false" : "freeShipping=true");
+
+let freeShipping = (shippingSum===0);
 
 
     // Конец решения задачи №2.3.
