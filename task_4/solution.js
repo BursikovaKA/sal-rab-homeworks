@@ -17,7 +17,7 @@ clearProducts();
 let products = parseProducts(json);
 length = products.length;
 for (let i = 0; i < length - 1; i++) {
-        function addProduct(products);
+        addProduct(products);
     }
     }
 // Выполните функцию clearProducts - она уже написана в коде, просто вызовите ее, аргументы не требуются
