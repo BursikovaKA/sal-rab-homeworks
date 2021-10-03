@@ -39,8 +39,15 @@ function sendRequest(name, phone, address, goods, sum) {
 };
 data.client = name + ' ' + phone; 
 
-data.order = {address, sum};  
-data.order.address = {street, house, entrance, floor, flat};
+address = {street: "ул. Ленина", house: "дом 2", entrance: "4 подъезд", floor: "5 этаж", flat: "кв 53",
+    toString: function() {
+        return this.street + ', ' + this.house + ', ' + this.entrance + ', ' + this.floor + ', ' + this.flat;
+      }
+};
+
+data.order = {address, sum}; 
+
+data.order.address = console.log(address);
 
     let countOfGoods = goods.length;
 
