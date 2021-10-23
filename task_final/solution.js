@@ -39,11 +39,9 @@ function sendRequest(name, phone, address, goods, sum) {
 };
 data.client = name + ' ' + phone; 
 
-let add = ['ул. ' + address.street + ', дом ' + address.house + ', ' + address.entrance + ' подъезд, ' + address.floor + ' этаж, кв ' + address.flat];
+let add = 'ул. ' + address.street + ', дом ' + address.house + ', ' + address.entrance + ' подъезд, ' + address.floor + ' этаж, кв ' + address.flat;
 
-address = console.log(JSON.stringify(add));
-
-data.order = {address, sum}; 
+data.order = {address: add, sum}; 
 
     let countOfGoods = goods.length;
 
